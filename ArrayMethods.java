@@ -6,5 +6,17 @@ public class ArrayMethods{
     }
     return sum;
   }
+  public static int columnSum(int[][] ary, int x){
+    int sum = 0;
+    for(int i = 0; i < ary.length; i++){
+      if(ary[i].length > x){
+        sum += (ary[i])[x];
+      }
+      else{
+        sum += 0;
+      }
+    }
+  return sum;
+  }
 
 }
