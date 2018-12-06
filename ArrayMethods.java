@@ -29,12 +29,43 @@ public class ArrayMethods{
     return ary2;
   }
   public static int[] allColSums(int[][] ary){
-    int [] ary2 = new int [ary.length];
-    for(int i = 0; i < ary.length; i++){
+    int longest = 0;
+    for(int i = 0; i < ary.length; i ++){
+      if(ary[i].length > longest){
+        longest = ary[i].length;
+      }
+    }
+    int [] ary2 = new int [longest];
+    for(int i = 0; i < longest; i++){
       ary2[i] = columnSum(ary,i);
     }
     return ary2;
   }
-
+  public static boolean isRowMagic(int[][] ary){
+    int count = 0;
+    for(int i = 0; i < ary.length; i ++){
+      int x = rowSum(ary, i);
+      if(i == 0){
+        count = x;
+      }
+      if(count != x){
+        return false;
+      }
+    }
+    return true;
+  }
+  public static boolean isColumnMagic(int[][] ary){
+    int count = 0;
+    for(int i = 0; i < ary[i].length; i ++){
+      int x = columnSum(ary, i);
+      if(i == 0){
+        count = x;
+      }
+      if(count != x){
+        return false;
+      }
+    }
+    return true;
+  }
 
 }
